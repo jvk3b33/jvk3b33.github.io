@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Jake</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%2308080c'/><text x='50' y='72' font-size='64' font-family='Georgia,serif' font-weight='600' fill='%23c9a84c' text-anchor='middle'>J</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="ambient-glow"></div>
+    <div class="wrapper">
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#projects" class="nav-link">Projects</a>
+            </div>
+        </nav>
+
+        <!-- Home Section -->
+        <div id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <p class="hero-greeting">Hey, I'm</p>
+                    <h1 class="hero-name">Jake</h1>
+                    <div class="hero-divider"></div>
+                    <p class="hero-tagline">I like making old stuff work</p>
+                    <p class="hero-bio">I like fixing up old tech and making it do things it was never meant to do. Not a fan of spyware or locked down stuff, so I run most things locally and customize whatever I can.</p>
+                    
+                    <div class="social-wrapper">
+                        <div class="social-label">
+                            <svg class="arrow-svg" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 30 C15 10, 35 5, 55 12 C65 16, 70 20, 75 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" stroke-dasharray="3 3"/>
+                                <path d="M70 12 L76 18 L68 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            </svg>
+                            <span>social links</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/jvk3b33" target="_blank" class="social-link" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="http://stackoverflow.com/users/32959040/spectralj" target="_blank" class="social-link" title="Stack Overflow">
+                                <i class="fab fa-stack-overflow"></i>
+                            </a>
+                            <a href="mailto:spectraljake@gmail.com" class="social-link" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div id="projects" class="section">
+            <div class="projects-container">
+                <div class="section-header">
+                    <p class="section-label">Stuff I've done</p>
+                    <h2>Projects</h2>
+                    <p class="section-subtitle">Some stuff I've been working on</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://www.home-assistant.io/images/favicon-192x192.png" alt="Home Assistant">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta">
+                                <span class="project-date">10 Jul 2026</span>
+                                <span class="project-tag">Tool</span>
+                            </div>
+                            <h3>Home Assistant Setup</h3>
+                            <p class="project-description">A fully local smart home setup running Home Assistant. No cloud, no subscriptions, everything runs on a small server at home.</p>
+                            <a href="https://www.home-assistant.io" target="_blank" class="project-link">
+                                <span>Explore</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                const targetId = link.getAttribute('href').substring(1);
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
